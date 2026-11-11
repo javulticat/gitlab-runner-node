@@ -18,7 +18,10 @@ RUN apt-get update \
 ENV NPM_CONFIG_PREFIX=/home/runner/.npm-global \
     PATH=/home/runner/.npm-global/bin:$PATH \
     CI_SERVER_URL=https://gitlab.com \
-    RUNNER_EXECUTOR=shell
+    RUNNER_EXECUTOR=shell \
+    LISTEN_ADDRESS=""
+
+EXPOSE 9252/tcp
 
 COPY --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
 USER runner

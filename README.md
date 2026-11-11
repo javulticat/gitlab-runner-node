@@ -18,6 +18,7 @@ GitLab Runner with Node.js baked in. Jobs run directly in the runner's container
 | `RUNNER_TOKEN` | required | Runner token (`glrt-...`) |
 | `CI_SERVER_URL` | `https://gitlab.com` | GitLab instance |
 | `RUNNER_EXECUTOR` | `shell` | Executor |
+| `LISTEN_ADDRESS` | `""` (disabled by default) | Optional HTTP listener for readiness, metrics, and debugging. Set to `0.0.0.0:9252` to enable. |
 
 ## License
 
