@@ -10,7 +10,7 @@ ADD --chmod=755 \
     /usr/local/bin/gitlab-runner
 
 RUN apt-get update \
- && apt-get install --yes --no-install-recommends ca-certificates git \
+ && apt-get install --yes --no-install-recommends ca-certificates git openssh-client \
  && rm -rf /var/lib/apt/lists/* \
  && useradd --create-home --skel /dev/null --uid 10001 runner \
  && echo 'PATH="$NPM_CONFIG_PREFIX/bin:$PATH"' > /etc/profile.d/npm-global.sh
