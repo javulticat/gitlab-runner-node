@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG NODE_VERSION
+ARG NODE_VERSION=lts
 FROM node:${NODE_VERSION}-bookworm-slim
 
 ARG TARGETARCH
