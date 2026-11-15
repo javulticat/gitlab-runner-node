@@ -18,11 +18,11 @@ ADD --chmod=755 \
     /usr/local/bin/gitlab-runner
 
 RUN apt-get update \
- && apt-get install --yes --no-install-recommends ca-certificates git git-lfs openssh-client \
- && git lfs install --system \
- && rm -rf /var/lib/apt/lists/* \
- && useradd --create-home --skel /dev/null --uid 10001 runner \
- && echo 'PATH="$NPM_CONFIG_PREFIX/bin:$PATH"' > /etc/profile.d/npm-global.sh
+    && apt-get install --yes --no-install-recommends ca-certificates git git-lfs openssh-client \
+    && git lfs install --system \
+    && rm -rf /var/lib/apt/lists/* \
+    && useradd --create-home --skel /dev/null --uid 10001 runner \
+    && echo 'PATH="$NPM_CONFIG_PREFIX/bin:$PATH"' > /etc/profile.d/npm-global.sh
 
 ENV NPM_CONFIG_PREFIX=/home/runner/.npm-global \
     PATH=/home/runner/.npm-global/bin:$PATH \
