@@ -6,6 +6,13 @@ FROM node:${NODE_VERSION}${DEBIAN_RELEASE:+-}${DEBIAN_RELEASE}-slim
 ARG TARGETARCH
 ARG GITLAB_RUNNER_VERSION=latest
 
+LABEL org.opencontainers.image.title="gitlab-runner-node" \
+    org.opencontainers.image.description="GitLab Runner with Node.js baked in" \
+    org.opencontainers.image.source="https://github.com/javulticat/gitlab-runner-node" \
+    org.opencontainers.image.licenses="MIT" \
+    io.github.javulticat.gitlab-runner-node.node-version="${NODE_VERSION}" \
+    io.github.javulticat.gitlab-runner-node.gitlab-runner-version="${GITLAB_RUNNER_VERSION}"
+
 ADD --chmod=755 \
     https://gitlab-runner-downloads.s3.amazonaws.com/${GITLAB_RUNNER_VERSION}/binaries/gitlab-runner-linux-${TARGETARCH} \
     /usr/local/bin/gitlab-runner
